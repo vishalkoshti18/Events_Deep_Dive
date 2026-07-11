@@ -3,6 +3,13 @@ on:
   pull_request:
     types:
       - opened
+  push:
+    branches:
+      - main
+      - dev
+    # paths:
+    #   - 'src/**'
+    #   - '.github/workflows/demo1.yml'
 jobs:
   deploy:
     runs-on: ubuntu-latest
