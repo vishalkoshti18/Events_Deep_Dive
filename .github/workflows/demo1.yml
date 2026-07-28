@@ -13,17 +13,17 @@ on:
     paths:
       - 'src/**'
       - '.github/workflows/demo1.yml'
-env:
-  sample_user: 'demo1'
-  sample_password: 'demo123'
+# env:
+#   sample_user: 'demo1'
+#   sample_password: 'demo123'
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: echo the value of the env var named user
-        run: echo "The value of sample_user is ${{ env.sample_user }}"
-      - name: echo the value of the env var named password
-        run: echo "The value of sample_password is ${{ env.sample_password }}"
+      - name: echo the value of the secrets var named user
+        run: echo "The value of SAMPLE_USER is ${{ secrets.SAMPLE_USER }}"
+      - name: echo the value of the secrets var named password
+        run: echo "The value of SAMPLE_PASSWORD is ${{ secrets.SAMPLE_PASSWORD }}"
       - name: Output event data
         run: echo "${{ toJSON(github.event) }}"
       - name: Get code
