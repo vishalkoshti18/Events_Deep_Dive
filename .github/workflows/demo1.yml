@@ -18,11 +18,12 @@ on:
 #   sample_password: 'demo123'
 jobs:
   deploy:
+    environment: testing
     runs-on: ubuntu-latest
     steps:
-      - name: echo the value of the secrets var named user
+      - name: echo the value of the env sec named user
         run: echo "The value of SAMPLE_USER is ${{ secrets.SAMPLE_USER }}"
-      - name: echo the value of the secrets var named password
+      - name: echo the value of the env sec named password
         run: echo "The value of SAMPLE_PASSWORD is ${{ secrets.SAMPLE_PASSWORD }}"
       - name: Output event data
         run: echo "${{ toJSON(github.event) }}"
